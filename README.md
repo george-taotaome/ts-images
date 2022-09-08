@@ -15,5 +15,26 @@
 ```
 
 启动步骤
-1. cd 到docker-backends/compose/all目录下，执行s up -d， 这些是先启动backend下的服务
-2. 然后再到各个app目录下，s up -d， 启动各自的app
+1. cd 到 docker-backends/compose/all 目录下，执行 s up -d， 这些是先启动 backend 下的服务
+2. 然后再到各个 app 目录下，s up -d， 启动各自的 app
+
+后续如更新
+1. docker-backends: 
+```
+# 如有更新 service 下的 yml，最好重建
+s up -d --build service-name
+# 如更新 settings/organization_settings 下的 settings.yml
+s exec zookeeper /zk-seed
+```
+2. 其它系统如有更新
+```
+# 如更新Gemfile，进入容器执行
+bundle install
+# 如更新 settings.example.yml, 对比配置到 settings.yml
+# 如有 migrate，进入容器执行
+bundle exec rake db:migrate
+# 如有 seeds，进入容器执行
+bundle exec rake db:seed
+# 如涉及索引数据，进入容器执行重建 index
+# 如不想进入容器执行，可以删除当前应用目录下的 scratch 目录，重启让其自行执行上述步骤
+```
