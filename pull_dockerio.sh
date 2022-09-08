@@ -8,6 +8,7 @@ list=(
     postgres:10.16
     redis:latest
     zookeeper:latest
+    selenium/standalone-chrome:latest
 )
 
 for variable in ${list[@]}

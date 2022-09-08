@@ -23,6 +23,7 @@ list=(
     backends-all_atlas-power-ring
     backends-all_green-lantern
     backends-all_squid-files
+    backends-all_selenium-chrome
     backends-all_nginx-proxy
     backends-all_zookeeper
     backends-all_elasticsearch6
