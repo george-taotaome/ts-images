@@ -13,3 +13,7 @@
     "192.168.31.40"
   ]
 ```
+
+启动步骤
+1. cd 到docker-backends/compose/all目录下，执行s up -d， 这些是先启动backend下的服务
+2. 然后再到各个app目录下，s up -d， 启动各自的app
