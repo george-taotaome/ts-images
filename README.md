@@ -18,7 +18,7 @@
 1. cd 到 docker-backends/compose/all 目录下，执行 s up -d， 这些是先启动 backend 下的服务
 2. 然后再到各个 app 目录下，s up -d， 启动各自的 app
 
-后续如更新
+后续如有更新 Gemfile 或 docker 相关的配置文件，都可能需要重建容器，其它可按下面方法解决：
 1. docker-backends: 
 ```
 # 如有更新 service 下的 yml，最好重建
