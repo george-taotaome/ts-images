@@ -36,5 +36,5 @@ bundle exec rake db:migrate
 # 如有 seeds，进入容器执行
 bundle exec rake db:seed
 # 如涉及索引数据，进入容器执行重建 index
-# 如不想进入容器执行，可以删除当前应用目录下的 scratch 目录，重启让其自行执行上述步骤
+# 如不想进入容器执行，可以删除当前应用目录下的 scratch 目录，重启让其自行执行 prepare
 ```
